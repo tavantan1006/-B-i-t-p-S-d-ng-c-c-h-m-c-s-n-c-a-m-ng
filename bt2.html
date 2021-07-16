@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.</title>
+</head>
+<body>
+<label for="so">Nhập số : </label>
+<input type="text" id="so">
+<input type="button" value="Show" onclick="show()">
+<p id="ketqua"></p>
+<script>
+  function show(){
+    let a = document.getElementById("so").value;
+    let b = 0;
+    let c = 0;
+    let text = "";
+
+    for (const aKey in a) {
+
+      if (aKey == 0){
+        text = text + a[aKey];
+      }else{
+        if (a[aKey-1]%2 == 0 && a[aKey]%2 == 0){
+          text = text+ "-" +a[aKey];
+        }else {
+          text = text + a[aKey];
+        }
+      }
+
+    }
+    document.getElementById("ketqua").innerText = text;
+  }
+</script>
+</body>
+</html>
